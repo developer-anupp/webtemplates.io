@@ -1,0 +1,365 @@
+/* Theme colors */
+:root {
+  --navy: #0b3c5d;
+  --sky: #87ceeb;
+
+  --offwhite: #f8f6f1; /* premium off-white */
+  --text: #1a1a1a;
+
+  --card: #f8f6f1; /* cards now off-white */
+  --shadow: rgba(0, 0, 0, 0.08);
+}
+body {
+  font-family: "Montserrat", sans-serif;
+  background: var(--sky); /* ensures skyblue background */
+  color: var(--text);
+  transition: 0.3s ease;
+  font-size: 16px;
+}
+
+body.dark {
+  --navy: #071f30;
+  --sky: #0f1e2a;
+  --white: #1c1c1c;
+  --text: #f5f5f5;
+  --card: #222;
+  --shadow: rgba(255, 255, 255, 0.05);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Section headers */
+section h2 {
+  text-align: center;
+  margin: 2rem 0 1rem 0;
+  font-size: 2rem;
+  color: var(--navy);
+}
+section p {
+  margin-bottom: 2rem;
+  color: var(--text);
+  font-size: 1rem;
+}
+
+/* Hero */
+.hero {
+  height: 85vh;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.25)),
+    url("assets/hero.jpeg") center/cover no-repeat;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+.hero-content h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 3.2rem;
+  color: white;
+  margin: 0;
+  text-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.6),
+    0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content p {
+  font-size: 1.3rem;
+  color: white;
+  text-shadow: 0 3px 15px rgba(0, 0, 0, 0.6);
+  margin: 0.5rem 0 0 0;
+}
+/* NAVBAR */
+nav {
+  position: sticky;
+  top: 0;
+  background: var(--navy);
+  width: 100%;
+  z-index: 100;
+}
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+}
+nav h1,
+nav a {
+  color: white;
+  text-decoration: none;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+nav ul.show {
+  flex-direction: column;
+  background: var(--navy);
+  width: 100%;
+  position: absolute;
+  top: 60px;
+  left: 0;
+}
+nav ul li a.active {
+  text-decoration: underline;
+}
+.controls button {
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.hamburger {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  color: white;
+}
+
+/* DESTINATIONS */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}
+.card {
+  background: var(--offwhite);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px var(--shadow);
+  transition: transform 0.3s ease;
+}
+.card:hover {
+  transform: scale(1.04);
+}
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.card-content {
+  padding: 1rem;
+  text-align: left;
+}
+
+.card-content h3 {
+  margin-bottom: 0.5rem;
+  font-family: "Playfair Display", serif;
+}
+
+.card-content p {
+  margin: 0;
+  font-weight: 500;
+}
+
+/* ===========================
+   TESTIMONIAL CAROUSEL FIX
+=========================== */
+
+/* ===========================
+   TESTIMONIAL CAROUSEL
+=========================== */
+
+.testimonial-carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 2rem auto;
+  gap: 1rem; /* space between arrows & cards */
+}
+
+.testimonial-viewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+.testimonial-wrapper {
+  display: flex;
+  gap: 1rem;
+  transition: transform 0.4s ease;
+}
+
+.testimonial-card {
+  background: var(--offwhite);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px var(--shadow);
+  padding: 1rem;
+  flex: 0 0 calc(33.333% - 0.67rem); /* 3 cards */
+}
+
+.testimonial-card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
+/* Tablet: 2 cards */
+@media (max-width: 992px) {
+  .testimonial-card {
+    flex: 0 0 calc(50% - 0.5rem);
+  }
+}
+
+/* Mobile: 1 card */
+@media (max-width: 600px) {
+  .testimonial-card {
+    flex: 0 0 100%;
+  }
+}
+
+/* Arrows (not overlapping) */
+.arrow {
+  background: var(--navy);
+  color: white;
+  border: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.testimonial-card p {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+.testimonial-card h4 {
+  margin-top: 0;
+  text-align: center;
+  font-weight: 500;
+}
+
+.arrow:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+/* CONTACT */
+/* ===========================
+   PREMIUM CONTACT SECTION
+=========================== */
+
+.contact-section {
+  background: var(--sky);
+  padding: 4rem 2rem;
+}
+
+.contact-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.contact-left {
+  flex: 1;
+}
+
+.contact-left h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.contact-subtext {
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  max-width: 500px;
+}
+
+.contact-details p {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.contact-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.contact-cta-card {
+  background: var(--offwhite);
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px var(--shadow);
+  text-align: center;
+  max-width: 350px;
+}
+
+.contact-cta-card h3 {
+  font-family: "Playfair Display", serif;
+  margin-bottom: 1rem;
+}
+
+.cta-button {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 12px 24px;
+  background: var(--navy);
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.cta-button:hover {
+  background: #072b43;
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .contact-wrapper {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .contact-subtext {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* FOOTER */
+footer {
+  background: var(--navy);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* FLOATING WHATSAPP */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25d366;
+  color: white;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+  nav ul {
+    display: none;
+  }
+}

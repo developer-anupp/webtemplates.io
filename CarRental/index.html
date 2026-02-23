@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CityRide Kerala | Premium Cab Booking Service</title>
+    <meta
+      name="description"
+      content="Premium cab services across Kerala tourism destinations like Munnar, Alleppey, Kovalam, and more."
+    />
+    <link rel="icon" href="favicon.ico" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="nav-container">
+        <h1 class="logo">CityRide Kerala</h1>
+        <button class="hamburger" id="hamburger">&#9776;</button>
+        <ul id="navLinks">
+          <li><a href="#destinations">Destinations</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="controls">
+          <button id="fontIncrease">A+</button>
+          <button id="fontDecrease">A-</button>
+          <button id="darkToggle">🌙</button>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <!-- HERO -->
+      <section class="hero">
+        <div class="hero-content">
+          <h2>Explore Kerala in Comfort & Style</h2>
+          <p>Safe, Affordable Cab Services Across God's Own Country</p>
+        </div>
+      </section>
+
+      <!-- DESTINATIONS -->
+      <section id="destinations">
+        <h2>Top Kerala Destinations</h2>
+        <div class="grid" id="destinationGrid"></div>
+      </section>
+
+      <!-- TESTIMONIALS -->
+      <section id="testimonials">
+        <h2>What Our Customers Say</h2>
+
+        <div class="testimonial-carousel">
+          <button class="arrow left" id="prevTestimonial">&#10094;</button>
+
+          <div class="testimonial-viewport">
+            <div class="testimonial-wrapper" id="testimonialWrapper">
+              <!-- Cards -->
+              <div class="testimonial-card">
+                <p>"Fantastic service! Drivers were on time and courteous."</p>
+                <h4>– Anita R.</h4>
+              </div>
+
+              <div class="testimonial-card">
+                <p>
+                  "We took a 3-day trip to Munnar and Alleppey. CityRide made
+                  the experience seamless, comfortable, and incredibly
+                  convenient."
+                </p>
+                <h4>– Rahul S.</h4>
+              </div>
+
+              <div class="testimonial-card">
+                <img
+                  src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg"
+                  alt="Google review"
+                />
+                <p>Google Maps review screenshot</p>
+              </div>
+
+              <div class="testimonial-card">
+                <p>
+                  "Affordable and reliable cab service for our Kerala trip."
+                </p>
+                <h4>– Priya N.</h4>
+              </div>
+
+              <div class="testimonial-card">
+                q
+                <img
+                  src="https://images.pexels.com/photos/3182830/pexels-photo-3182830.jpeg"
+                  alt="Instagram feedback"
+                />
+                <p>Instagram DM feedback</p>
+              </div>
+            </div>
+          </div>
+
+          <button class="arrow right" id="nextTestimonial">&#10095;</button>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="contact-section">
+        <div class="contact-wrapper">
+          <div class="contact-left">
+            <h2>Let’s Plan Your Kerala Journey</h2>
+            <p class="contact-subtext">
+              Whether you're exploring backwaters, hill stations, or beaches —
+              our team is ready to arrange a seamless travel experience.
+            </p>
+
+            <div class="contact-details">
+              <p><strong>📞 Phone:</strong> +91 9611480762</p>
+              <p><strong>✉ Email:</strong> support@cityridekerala.com</p>
+              <p><strong>📍 Office:</strong> MG Road, Kochi, Kerala</p>
+            </div>
+          </div>
+
+          <div class="contact-right">
+            <div class="contact-cta-card">
+              <h3>Book Your Ride Today</h3>
+              <p>
+                Quick confirmations. Professional drivers. Transparent pricing.
+              </p>
+              <a
+                href="https://wa.me/919611480762"
+                target="_blank"
+                class="cta-button"
+              >
+                Chat on WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2026 CityRide Kerala Tourism</p>
+    </footer>
+
+    <!-- FLOATING WHATSAPP -->
+    <a class="whatsapp-float" href="https://wa.me/919611480762" target="_blank"
+      >💬</a
+    >
+
+    <script src="script.js"></script>
+  </body>
+</html>
